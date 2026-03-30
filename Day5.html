@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý học sinh</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f0f4ff 0%, #dfe9ff 100%);
+            color: #1f2a44;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 14px 40px rgba(31, 42, 68, .14);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        h1 {
+            margin-top: 0;
+            color: #243e6c;
+            font-size: 1.8rem;
+        }
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px 18px;
+            margin-bottom: 20px;
+            align-items: end;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px 10px;
+            border-radius: 8px;
+            border: 1px solid #c5d1f7;
+            font-size: 0.95rem;
+            box-sizing: border-box;
+        }
+        button.add-btn {
+            grid-column: 1 / -1;
+            height: 40px;
+            color: #fff;
+            background: #2b6cb0;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+        button.add-btn:hover {
+            background: #1d4f8b;
+        }
+        #list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .student-item {
+            background: #f8fbff;
+            border: 1px solid #d8e3fa;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            padding: 12px 14px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 10px;
+        }
+        .student-details {
+            line-height: 1.4;
+        }
+        .actions {
+            display: flex;
+            gap: 6px;
+        }
+        .actions button {
+            border: none;
+            border-radius: 6px;
+            padding: 6px 10px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .actions .edit-btn {
+            color: #1f4a8b;
+            background: #dbe8ff;
+        }
+        .actions .delete-btn {
+            color: #b22226;
+            background: #fee3e3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quản lý học sinh</h1>
+        <form action="" id="student-form">
+            <div>
+                <label for="namestudent">Tên</label>
+                <input type="text" id="namestudent" placeholder="Nhập họ và tên học sinh">
+            </div>
+            <div>
+                <label for="studentage">Tuổi</label>
+                <input type="text" id="studentage" placeholder="Nhập tuổi học sinh">
+            </div>
+            <div>
+                <label for="genderselect">Giới tính</label>
+                <select id="genderselect">
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                </select>
+            </div>
+            <div>
+                <label for="studentGPA">Điểm trung bình</label>
+                <input type="text" id="studentGPA" placeholder="Nhập điểm GPA">
+            </div>
+            <div>
+                <label for="statusselect">Chọn trạng thái học sinh</label>
+                <select id="statusselect">
+                    <option value="">Chọn trạng thái</option>
+                    <option value="Active">Active</option>
+                    <option value="InActive">InActive</option>
+                </select>
+            </div>
+            <button type="button" class="add-btn" onclick="addstudent()">Thêm</button>
+        </form>
+        <ol id="list"></ol>
+    </div>
+    <script src="./Day5.js"></script>
+</body>
+</html>
