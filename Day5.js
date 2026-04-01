@@ -50,7 +50,7 @@ function render(s) {
 render(students);
 
 let addstudent = () => {
-  if (flag === -1) {
+  if (flag === 0) {
     let inputName = document.getElementById(`namestudent`).value;
     let inputAge = document.getElementById(`studentage`).value;
     let inputGender = document.getElementById(`genderselect`).value;
