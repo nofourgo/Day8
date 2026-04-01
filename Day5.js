@@ -50,7 +50,7 @@ function render(s) {
 render(students);
 
 let addstudent = () => {
-  if (flag === 0) {
+  if (flag === -1) {
     let inputName = document.getElementById(`namestudent`).value;
     let inputAge = document.getElementById(`studentage`).value;
     let inputGender = document.getElementById(`genderselect`).value;
@@ -83,12 +83,12 @@ let addstudent = () => {
         gpa: inputGPA,
         status: inputStatus,
       };
-      flag = 0;
+      flag = -1;
       let btnAdd = document.getElementById(`btnAdd`);
       btnAdd.innerText = "Thêm";
       console.log(students);
-        let title = document.getElementById("title");
-  title.innerText = "Quản lý học sinh";
+      let title = document.getElementById("title");
+      title.innerText = "Quản lý học sinh";
       localStorage.setItem("students", JSON.stringify(students));
       render(students);
     }
